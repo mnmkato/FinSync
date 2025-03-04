@@ -6,7 +6,7 @@ export default function NavGrid() {
   return (
     <div className='nav-buttons'>
       <Link to="/inventory">
-        <button>
+        <button className='navButton'>
           <div>
             <FaWarehouse />
           </div>
@@ -15,7 +15,7 @@ export default function NavGrid() {
       </Link>
 
       <Link to="/sales">
-        <button>
+        <button className='navButton'>
           <div>
             <FaMoneyBill />
           </div>
@@ -24,7 +24,7 @@ export default function NavGrid() {
       </Link>
 
       <Link to="/expenses">
-        <button>
+        <button className='navButton'>
           <div>
             <FaDollarSign />
           </div>
@@ -33,7 +33,7 @@ export default function NavGrid() {
       </Link>
 
       <Link to="/monthly-profit-loss">
-        <button>
+        <button className='navButton'>
           <div>
             <FaChartSimple />
           </div>
@@ -42,7 +42,7 @@ export default function NavGrid() {
       </Link>
 
       <Link to="/orders-deliveries">
-        <button>
+        <button className='navButton'>
           <div>
             <FaShoppingBag />
           </div>
@@ -51,7 +51,7 @@ export default function NavGrid() {
       </Link>
 
       <Link to="/customers">
-        <button>
+        <button className='navButton'>
           <div>
             <FaUsers />
           </div>
@@ -60,7 +60,7 @@ export default function NavGrid() {
       </Link>
 
       <Link to="/suppliers">
-        <button>
+        <button className='navButton'>
           <div>
             <FaTruck />
           </div>
