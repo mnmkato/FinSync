@@ -9,8 +9,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
-
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import AddEntry from './AddEntry';
 interface InventoryItem {
   ItemID: number;
   ItemName: string;
@@ -44,32 +52,44 @@ export default function Inventory() {
   
     return (
       <>
-        <h1>Inventory</h1>
-        <Table>
-      <TableCaption>A list of your inventory items.</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Item Name</TableHead>
-          <TableHead>Category</TableHead>
-          <TableHead>Stock Level</TableHead>
-          <TableHead>Purchase Price</TableHead>
-          <TableHead>Selling Price</TableHead>
-          <TableHead>Supplier</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {inventoryData.map((item) => (
-          <TableRow key={item.ItemID}>
-            <TableCell className="font-medium">{item.ItemName}</TableCell>
-            <TableCell>{item.Category}</TableCell>
-            <TableCell>{item.StockLevel}</TableCell>
-            <TableCell>{item.PurchasePrice}</TableCell>
-            <TableCell>{item.SellingPrice}</TableCell>
-            <TableCell>{item.Supplier}</TableCell>
+        <h1 className='text-center'>Inventory</h1>
+        <Card>
+      <CardHeader>
+        <CardTitle>Inventory List</CardTitle>
+        <CardDescription>Detailed overview of available items and quantities.</CardDescription>
+      </CardHeader>
+      <CardContent>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Item Name</TableHead>
+            <TableHead>Category</TableHead>
+            <TableHead>Stock Level</TableHead>
+            <TableHead>Purchase Price</TableHead>
+            <TableHead>Selling Price</TableHead>
+            <TableHead>Supplier</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {inventoryData.map((item) => (
+            <TableRow key={item.ItemID}>
+              <TableCell className="font-medium">{item.ItemName}</TableCell>
+              <TableCell>{item.Category}</TableCell>
+              <TableCell>{item.StockLevel}</TableCell>
+              <TableCell>{item.PurchasePrice}</TableCell>
+              <TableCell>{item.SellingPrice}</TableCell>
+              <TableCell>{item.Supplier}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      </CardContent>
+      <CardFooter className="flex justify-end">
+        <AddEntry />
+      </CardFooter>
+    </Card>
+
+       
       </>
     );
   }
